@@ -1,5 +1,12 @@
-let btn = document.getElementById("btn").addEventListener("click", () => {
+let btn = document.getElementById("btn").addEventListener("click", (event) => {
 	const value = document.getElementById("text").value;
+	if (!value) {
+		return
+	}
 	let para = document.getElementById("demo");
 	para.textContent = `Hello ${value}, welcome to the bootcamp`;
+
+	document.getElementById("text").value = "";
+	event.preventDefault()
+	
 });
